@@ -1,0 +1,59 @@
+/* Empty. Add your own CSS if you like */
+.item-md-label { margin-left:0px; }
+
+.item-input-inset .item-input-wrapper input { width:80%;padding-left:20px; }
+
+.loading-indication { display:none; }
+
+
+.spinner svg {
+  width: 8% !important;
+  height: 55px !important;
+  display:block;
+  margin:0 auto;
+
+}
+.message-list { margin: 15px 0; }
+.message-bubble { padding:4px 10px; }
+
+.img-left, .img-right { margin-top:10px; }
+.img-left { float:left; }
+.img-right { float:right; }
+
+.button.light-bg:hover, .button.light-bg.activated:hover {
+	color: #FF6200;
+	background-color: #f0f0f0;
+}
+.button.light-bg, .button.light-bg.activated {
+	background-color:#fff;
+	color:#FF6200;
+}
+.button.light-border {
+	background-color: #5f63a9;
+	color:#fff;
+}
+.intro-text p {
+	color:#fff;
+	font-size:26px;
+	line-height: 30px;
+}
+
+.logo { margin-top:40px; }
+
+.item-md-label .input-label { letter-spacing: .05rem;font-family: "RobotoDraft";color:#515151; }
+.item-md-label input { background-color:rgba(224,224,224, 0.99); color: #515151 ;letter-spacing: .05rem;font-family: "RobotoDraft"; }
+
+.item-md-label .highlight-energized { background-color: #FF6200; }
+
+.bar-blue {
+	border-color: #5f63a9;
+    background-color: #5f63a9;
+    background-image: none;
+    color: #fff;
+}
+
+.bottommsg {
+	border-top:1px solid #dbdbdb;
+}
+.divsend .button.button { color:#FF6200; }
+.divsend .button.button:disabled { background-color:transparent;color:#bdbdbd; }

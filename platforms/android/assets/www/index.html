@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above  -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ion-md-input.min.css" />
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- moment -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <!-- angular moment -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.8.2/angular-moment.min.js"></script>
+
+    <script src="lib/ionic-material/dist/ionic.material.js"></script>
+    <script src="js/ion-md-input.min.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-css/angular-css.min.js"></script>
+    <script src="lib/angular-elastic/elastic.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+
+  </head>
+  <body ng-app="niles" class="platform-android platform-cordova platform-webview">
+
+  <ion-nav-view></ion-nav-view>
+
+  <script id="templates/intro.html" type="text/ng-template">
+    <ion-view view-title="Intro">
+       <ion-content class="intro-page" scroll="false">
+        <section class="intro-container container">
+          <!-- LOGO HERE -->
+          <div class="intro-logo header text-center">
+            <img src="./img/niles-big.png" class="logo" />
+
+          </div>
+
+          <!-- SHORT INTRO TEXT -->
+           <div class="intro-text padding-top padding-bottom">
+            <div class="row row-center">
+             <div class="col col-center">
+                <p>
+                Hello,<br>
+                My name is Niles.<br><br>
+                I'm here to assist you with your finances
+                </p>
+              </div>
+             </div>
+            </div>
+
+          <div class="buttons-container">
+            <div class="row">
+              <div class="col text-center">
+                <button class="button button-positive light-bg ink" ng-click="toLogin()">Login</button>
+              </div>
+              <div class="col text-center">
+                <button class="button button-outline light-border ink" ng-click="toRegister()">Register</button>
+              </div>
+            </div>
+          </div>
+        </section>
+       </ion-content>
+    </ion-view>
+  </script>
+
+  <script id="templates/main.html" type="text/ng-template">
+    <ion-view view-title="Main">
+       <ion-content class="padding">
+          asd 2
+       </ion-content>
+    </ion-view>
+  </script>
+
+  <script id="templates/login.html" type="text/ng-template">
+    <ion-view view-title="Login">
+       <ion-content class="padding login-page">
+          <section class="login-container container">
+
+          <!-- LOGO HERE -->
+          <div class="intro-logo header text-center">
+            <img src="./img/niles-big.png" class="logo" />
+          </div>
+
+          <div class="list">
+            <ion-md-input placeholder="Phone" highlight-color="energized" type="text" ng-model="user.phone"></ion-md-input>
+            <ion-md-input placeholder="Password" highlight-color="energized" type="password" ng-model="user.password"></ion-md-input>
+          </div>
+
+          <div class="buttons-container">
+            <div class="row">
+              <div class="col text-center">
+                <button class="button button-positive light-bg ink" ng-click="logIn(user)">Go</button>
+              </div>
+              <div class="col text-center">
+                <button class="button button-outline light-border ink" ng-click="toIntro()">Cancel</button>
+              </div>
+            </div>
+          </div>
+
+       </ion-content>
+    </ion-view>
+  </script>
+  <script id="templates/register.html" type="text/ng-template">
+    <ion-view view-title="Register">
+       <ion-content class="padding register-page">
+          <section class="register-container container">
+
+          <!-- LOGO HERE -->
+          <div class="register-logo header text-center">
+            <img src="./img/niles-medium.png" class="logo" />
+          </div>
+
+          <div class="list">
+            <ion-md-input placeholder="First Name*" highlight-color="energized" type="text" ng-model="user.fname"></ion-md-input>
+            <ion-md-input placeholder="Last Name*" highlight-color="energized" type="text" ng-model="user.lname"></ion-md-input>
+            <ion-md-input placeholder="Phone" highlight-color="energized" type="text" ng-model="user.phone"></ion-md-input>
+            <ion-md-input placeholder="Password" highlight-color="energized" type="password" ng-model="user.password"></ion-md-input>
+          </div>
+
+          <div class="buttons-container">
+            <div class="row">
+              <div class="col text-center">
+                <button class="button button-positive light-bg ink">Register</button>
+              </div>
+              <div class="col text-center">
+                <button class="button button-outline light-border ink" ng-click="toIntro()">Cancel</button>
+              </div>
+            </div>
+          </div>
+
+       </ion-content>
+    </ion-view>
+  </script>
+  <script id="templates/chat.html" type="text/ng-template">
+      <ion-view view-title="Chat" ng-controller="ChatCtrl as chatCtrl" class="light-grey">
+        <ion-nav-bar class="bar-blue">
+            <ion-nav-buttons side="right">
+              <!--<button class="button button-clear icon ion-android-more-vertical right8" ng-click="chatCtrl.openPopover($event)">
+              </button>-->
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-content has-bouncing="true" class="content">
+          <div ng-show="chatCtrl.connected">
+          <div class="log pad2">"Welcome to /dev/default Chat <strong>{{chatCtrl.nickname}}</strong>"</div>
+          <div class="log">{{chatCtrl.number_message}}</div>
+          </div>
+          <div>
+              <ul class="message-list">
+                <li ng-repeat="(key, message) in chatCtrl.messages" class="clearfix message-bubble" ng-class="{ 'first-message': key == 0, '': key != 0 }">
+
+                  <img ng-class="{'img-right': !message.mine, 'img-left': message.mine }" src="img/niles-small.png" ng-src="{{message.mine && 'img/niles-small.png' || 'img/user-small.png'}}"/>
+                  <div ng-class="{'message':message.style,'log':!message.style}">
+                    <div class="" ng-class="{'right': message.mine, 'left': !message.mine, 'chat-bubble': message.style}">
+                      <div ng-if="!message.chart">
+                        {{ message.content }}
+                      </div>
+                      <div ng-if="message.chart">
+                        <img src="{{ message.chart }}"/>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li ng-show="loadingIndicator">
+                  <ion-spinner icon="dots"></ion-spinner>
+                </li>
+              </ul>
+          </div>
+        </ion-content>
+        <div class="list bottommsg">
+          <div class="item item-input-inset">
+            <label  class="item-input-wrapper line-light-grey nopadtop">
+              <input class="line-light-grey" ng-change="chatCtrl.updateTyping()" type="text"  placeholder="Your Message" ng-enter="chatCtrl.sendMessage()" ng-model="chatCtrl.message"> 
+            </label>
+            <div class="divsend">
+                <button class="button button-clear ion-android-send iconsend" ng-disabled="!chatCtrl.message || chatCtrl.message==''" ng-click="chatCtrl.sendMessage()"></button>
+            </div>
+          </div>
+        </div>  
+       </ion-view>
+    </script>
+
+  </body>
+</html>
+
+
+

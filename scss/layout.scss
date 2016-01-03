@@ -1,0 +1,84 @@
+.container {
+	width:100%;
+	position:relative;
+	
+}
+
+.intro-page {
+	background-color: $maincolor;
+	.intro-text {
+		display:block;
+		width:70%;
+		flex-grow: 1;
+		text-align:center;
+		margin:0 auto;
+		p {
+			padding:20px 0;
+		}
+	}
+	.buttons-container {
+		text-align:center;
+		margin-bottom:40px;
+	}
+	.button {
+		font-family: "RobotoDraft";
+	}
+}
+
+.button {
+	min-width:90%;
+}
+
+.intro-container > .header img {
+
+}
+
+.intro-container > .header {
+    padding-top: 20px;
+    
+}
+
+.intro-container {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.login-container {
+	display: -webkit-flex;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.login-page {
+	background-color: $maincolor2;
+	.button {
+		font-family: "RobotoDraft";
+	}
+	.list {
+		flex-grow: 1;
+		margin:20px auto;
+		width:90%;
+	}
+}
+
+.register-container {
+	display: -webkit-flex;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+
+.register-page {
+	background-color: $maincolor2;
+	.button {
+		font-family: "RobotoDraft";
+	}
+	.list {
+		flex-grow: 1;
+		margin:20px auto;
+		width:90%;
+	}
+	.buttons-container {
+		text-align:center;
+	}
+}
